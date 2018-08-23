@@ -1,0 +1,46 @@
+<sdf version="1.4">
+    <world name="MDRS">
+        <include>
+            <uri>model://sun</uri>
+        </include>
+
+        <model name="ground">
+            <static>true</static>
+            <link name="ground">
+                <collision name="collision">
+                    <geometry>
+                        <heightmap>
+                            <uri>file://media/height/heights.dem</uri>
+                            <size>400 400 50</size>
+                            <pos>0 0 0</pos>
+                        </heightmap>
+                    </geometry>
+                </collision>
+
+                <visual name="height_vis">
+                    <geometry>
+                        <heightmap>
+                            <texture>
+                                <diffuse>file://media/height/texture/ground.png</diffuse>
+                                <normal>file://media/height/texture/ground_normal.png</normal>
+                                <size>3</size>
+                            </texture>
+			    <texture>
+                                <diffuse>file://media/height/texture/cliff.png</diffuse>
+                                <normal>file://media/height/texture/cliff_normal.png</normal>
+				<size>3</size>
+                            </texture>
+                            <blend>
+                                <min_height>7.5</min_height>
+                                <fade_dist>3</fade_dist>
+                            </blend>
+                            <uri>file://media/height/heights.dem</uri>
+                            <size>400 400 50</size>
+                            <pos>0 0 0</pos>
+                        </heightmap>
+                    </geometry>
+                </visual>
+            </link>
+        </model>
+    </world>
+</sdf>
