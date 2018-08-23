@@ -3,6 +3,39 @@ Custom Repository of UCL.
 
 Using Husky Robot for simulator.
 
+## Discription
+
+Completing this project has been the most exciting and ambitious undertakings. We scratched from zero and had experienced enormous pressure and stress. After all the sleepless nights and relentless toil, we want to take this moment to thank you - Daniel Snider (https://github.com/danielsnider) who helped us making this a reality. Your reference guided us making this dream come true. To create a better development environment, we decided to open source our autonomous driving system to contribute to a better world.
+
+The autonomous system is developed with Robotic Operating System (ROS) and C/C++. It has three functions: GPS Navigation, Autonomous Navigation and Image Processing. The whole system has the ability of navigating to the provided GPS coordinate, avoiding obstacles and detecting a tennis ball elevated 10-50cm off the ground. The design goal of the system originally is to help UCL Rover Team as the first UK’s university rover team to represent the UK to compete in the University Rover Challenge, in Utah, the US and European Rover Challenge in Poland. The autonomous system of UCL Mars Rover is consisted of two sub-systems: the master system, developed with ROS and run on NVIDIA JETSON TX2 and the slave system, developed with C++ and run on Arduino MEGA.
+
+To know more about the team: https://www.uclrover.com
+
+Demonstration of UCL Rover and the autonomous function:
+[![Full Document](doc/The Autonomous System Demonstration.pdf)]
+
+[![](images/ucl_rover.png)](https://youtu.be/lozCbwh67XY "UCL Rover Promotional Video | European Rover Challenge 2018")
+
+Full demonstration of the Autonomous System: (upload a pdf here)
+
+[![Simulation Environment Screenshot](images/simulation_environment.png)]
+[![GPS Navigation Simulation Video](images/gps_navigation_simulation.png)]
+[![Path Planning Simulation Video](images/path_planning_simulation.png)]
+[![Object Detection Simulation Video](images/object_detection_simulation.png)]
+[![Master System ROS Architecture](images/master_system_ros_architecture.png)]
+
+## Hardware List
+
+| Hardware |  description |
+|----------|--------------|
+| NVIDIA Jetson TX2 | the Master System processor|
+| Arduino Mega 2560 | the Slave System processor |
+| Ublox NEO-M8N GPS unit | GPS sensor |
+|ZED Depth Camera |distance measurement and object detection |
+|SparkFun Razor 9DoF IMU |Measure inertia and localise the rover |
+[![Hardware of Master System](images/hardware_of_master_system.jpg)]
+[![Slave System Hardware](images/slave_system_hardware.jpg)]
+
 ## Dependency
 
 Before begin our project, we recommended that you install following libraries:
