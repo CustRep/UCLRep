@@ -1,0 +1,7 @@
+<launch>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="robot_base_to_camera_link"
+        args="0.7 0 0.6 0 0 0 robot_base camera_link"/>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="camera_link_to_zed_actual_frame"
+          args="0 0 0 0 0 0 camera_link zed_actual_frame"/>
+</launch>
+

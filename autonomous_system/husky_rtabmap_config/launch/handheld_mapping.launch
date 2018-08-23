@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="rtabmap_args" default="--delete_db_on_start"/>
+  <arg name="USE_KINECT" default="false" />
+  <arg name="simulation" default="true" />
+
+  <include file="$(find husky_rtabmap_config)/launch/setup_mapping_transforms_handheld.launch">
+  </include>
+
+  <group if="$(arg simulation)">
+    <group ns="rtabmap">
+      <node output="screen" pkg="rtabmap_ros" name="rtabmap" type="rtabmap">
+        <param name="subscribe_depth" value="true" />
+        <param name="subscribe_scan_cloud" value="false" />
+
+        <!--remap from="odom" to="/odom_source/zed/odom" />
+        <remap from="rgb/image" to="/camera/rgb/image_rect_color" />
+        <remap from="rgb/camera_info" to="/camera/rgb/camera_info" />
+        <remap from="scan_cloud" to="/camera/point_cloud/cloud_registered" />
+        <remap from="depth/image" to="/camera/depth/depth_registered" unless="$(arg USE_KINECT)"/>
+        <remap from="depth/image" to="/camera/depth_registered/image_raw" if="$(arg USE_KINECT)"/-->
+
+        <!-- <remap from="odom" to="/odom" /> -->
+        <remap from="odom" to="/odometry/filtered" />
+        <remap from="rgb/image" to="/zed/rgb/image_raw" />
+        <remap from="rgb/camera_info" to="/zed/rgb/camera_info" /> 
+        <!-- <remap from="scan_cloud" to="/camera/point_cloud/cloud_registered" /> -->
+        <remap from="scan_cloud"  to="/zed/depth/points" />
+        <remap from="depth/image" to="/zed/depth/image_raw" unless="$(arg USE_KINECT)"/>
+        <remap from="depth/image" to="/zed/depth/image_raw" if="$(arg USE_KINECT)"/>
+
+        <!-- <param name="frame_id" value="robot_base" /> -->
+        <param name="frame_id" value="base_footprint" />
+        <param name="proj_max_ground_angle" value="45"/> 
+      </node>
+    </group>
+  </group>
+
+  <group unless="$(arg simulation)">
+    <include file="$(find husky_rtabmap_config)/launch/odom_up.launch" >
+      <arg name="USE_KINECT" value="$(arg USE_KINECT)" />
+    </include>
+
+    <group ns="rtabmap">
+      <node output="screen" pkg="rtabmap_ros" name="rtabmap" type="rtabmap">
+        <param name="subscribe_depth" value="true" />
+        <param name="subscribe_scan_cloud" value="false" />
+
+        <remap from="odom" to="/odom_source/zed/odom" />
+        <remap from="rgb/image" to="/camera/rgb/image_rect_color" />
+        <remap from="rgb/camera_info" to="/camera/rgb/camera_info" />
+        <remap from="scan_cloud" to="/camera/point_cloud/cloud_registered" />
+        <remap from="depth/image" to="/camera/depth/depth_registered" unless="$(arg USE_KINECT)"/>
+        <remap from="depth/image" to="/camera/depth_registered/image_raw" if="$(arg USE_KINECT)"/>
+
+        <!-- <param name="frame_id" value="robot_base" /> -->
+        <param name="frame_id" value="base_footprint" />
+        <param name="proj_max_ground_angle" value="45"/> 
+      </node>
+    </group>
+  </group>
+</launch>

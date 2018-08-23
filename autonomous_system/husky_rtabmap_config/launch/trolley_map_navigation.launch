@@ -1,0 +1,6 @@
+<launch>
+    <include file="$(find husky_rtabmap_config)/launch/move_base_bringup.launch" />
+    <!-- <include file="$(find husky_rtabmap_config)/launch/move_base_obstacle_avoid_bringup.launch" /> -->
+    <include file="$(find husky_rtabmap_config)/launch/handheld_mapping.launch" />
+    <include file="$(find husky_rtabmap_config)/launch/mapping_rviz.launch" />
+</launch>

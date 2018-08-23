@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+  <name>husky_rtabmap_config</name>
+  <version>0.0.0</version>
+  <description>The husky_rtabmap_config package</description>
+
+  <maintainer email="urc@r3.notaurl">r3</maintainer>
+
+
+  <license>TODO</license>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+
+  <export>
+  </export>
+</package>

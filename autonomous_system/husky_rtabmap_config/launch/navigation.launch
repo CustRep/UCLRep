@@ -1,0 +1,12 @@
+<launch>
+
+  <arg name="kinect" default="false"/>
+  <arg name="simulation" default="false" />
+  <include file="$(find husky_navigation)/launch/move_base.launch"/>
+
+  <include file="$(find husky_rtabmap_config)/launch/handheld_mapping.launch">
+    <arg name="simulation" value="$(arg simulation)"/>
+    <arg name="USE_KINECT" value="$(arg kinect)" />
+  </include>
+
+</launch>

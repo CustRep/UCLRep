@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="USE_KINECT" default="false" />
+  <group ns="odom_source">
+    <group ns="zed">
+      <node output="screen" type="rgbd_odometry" name="zed_odom" pkg="rtabmap_ros" respawn="true">
+        <param name="frame_id" value="robot_base"/>
+        <param name="publish_tf" value="false"/>
+
+        <remap from="rgb/image" to="/camera/rgb/image_rect_color"/>
+        <remap from="rgb/camera_info" to="/camera/rgb/camera_info"  />
+        <remap from="depth/image" to="/camera/depth/depth_registered" unless="$(arg USE_KINECT)"/>
+        <remap from="depth/image" to="/camera/depth_registered/image_raw" if="$(arg USE_KINECT)"/>
+        <param name="Odom/ResetCountdown" value="1"/>
+
+        <!-- Options to Reduce Resource Usage -->
+        <!-- 0=Frame-to-Map (F2M) 1=Frame-to-Frame (F2F) -->
+        <param name="Odom/Strategy" value="0"/>
+        <!-- Correspondences: 0=Features Matching, 1=Optical Flow -->
+        <param name="Vis/CorType" value="0"/>
+        <!-- maximum features map size, default 2000 -->
+<!--                <param name="OdomF2M/MaxSize" type="string" value="1500"/> -->
+                <!-- maximum features extracted by image, default 1000 -->
+<!--                <param name="Vis/MaxFeatures" type="string" value="1200"/> -->
+      </node>
+    </group>
+  </group>
+</launch>

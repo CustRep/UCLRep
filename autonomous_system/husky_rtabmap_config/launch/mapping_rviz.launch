@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="simulation" default="false" />
+  <node pkg="rviz" type="rviz" name="map_rviz" args="-d $(find husky_rtabmap_config)/launch/mapping.rviz"/>
+
+  <group if="$(arg simulation)">
+    <group ns="rtabmap">
+      <node pkg="rtabmap_ros" type="rtabmapviz" name="rtvaDSFDASDfasdfg">
+        <!--remap from="odom" to="/odom_source/zed/odom" />
+        <remap from="rgb/image" to="/camera/rgb/image_rect_color" />
+        <remap from="depth/image" to="/camera/depth_registered/image_raw" />
+        <param name="subscribe_depth" value="true" />
+        <remap from="rgb/camera_info" to="/camera/rgb/camera_info" /-->
+
+        <remap from="odom" to="odom" />
+        <remap from="rgb/image" to="/zed/rgb/image_raw" />
+        <remap from="depth/image" to="/zed/depth/image_raw" />
+        <param name="subscribe_depth" value="true" />
+        <remap from="rgb/camera_info" to="/zed/rgb/camera_info" />
+      </node>
+    </group>
+  </group>
+
+  <group unless="$(arg simulation)">
+    <group ns="rtabmap">
+      <node pkg="rtabmap_ros" type="rtabmapviz" name="rtvaDSFDASDfasdfg">
+        <remap from="odom" to="/odom_source/zed/odom" />
+        <remap from="rgb/image" to="/camera/rgb/image_rect_color" />
+        <remap from="depth/image" to="/camera/depth_registered/image_raw" />
+        <param name="subscribe_depth" value="true" />
+        <remap from="rgb/camera_info" to="/camera/rgb/camera_info" />
+      </node>
+    </group>
+  </group>
+
+</launch>
