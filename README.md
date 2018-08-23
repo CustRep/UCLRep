@@ -12,17 +12,17 @@ The autonomous system is developed with Robotic Operating System (ROS) and C/C++
 To know more about the team: https://www.uclrover.com
 
 Demonstration of UCL Rover and the autonomous function:
-[![Full Document](doc/The Autonomous System Demonstration.pdf)]
+![Full Document](doc/The Autonomous System Demonstration.pdf)
 
 [![](images/ucl_rover.png)](https://youtu.be/lozCbwh67XY "UCL Rover Promotional Video | European Rover Challenge 2018")
 
 Full demonstration of the Autonomous System: (upload a pdf here)
 
-[![Simulation Environment Screenshot](images/simulation_environment.png)]
-[![GPS Navigation Simulation Video](images/gps_navigation_simulation.png)]
-[![Path Planning Simulation Video](images/path_planning_simulation.png)]
-[![Object Detection Simulation Video](images/object_detection_simulation.png)]
-[![Master System ROS Architecture](images/master_system_ros_architecture.png)]
+![Simulation Environment Screenshot](images/simulation_environment.png)
+![GPS Navigation Simulation Video](images/gps_navigation_simulation.png)
+![Path Planning Simulation Video](images/path_planning_simulation.png)
+![Object Detection Simulation Video](images/object_detection_simulation.png)
+![Master System ROS Architecture](images/master_system_ros_architecture.png)
 
 ## Hardware List
 
@@ -33,8 +33,9 @@ Full demonstration of the Autonomous System: (upload a pdf here)
 | Ublox NEO-M8N GPS unit | GPS sensor |
 |ZED Depth Camera |distance measurement and object detection |
 |SparkFun Razor 9DoF IMU |Measure inertia and localise the rover |
-[![Hardware of Master System](images/hardware_of_master_system.jpg)]
-[![Slave System Hardware](images/slave_system_hardware.jpg)]
+
+![Hardware of Master System](images/hardware_of_master_system.jpg)
+![Slave System Hardware](images/slave_system_hardware.jpg)
 
 ## Dependency
 
