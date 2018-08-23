@@ -37,10 +37,10 @@ Full demonstration of the Autonomous System: [Full Document](https://github.com/
 |ZED Depth Camera |distance measurement and object detection |
 |SparkFun Razor 9DoF IMU |Measure inertia and localise the rover |
 
-<div align=center><img width="640" height="480" src="images/hardware_of_master_system.png"/>
+<div align=center><img width="640" height="480" src="images/hardware_of_master_system.jpg"/>
 Hardware of Master System</div>
 
-<div align=center><img width="640" height="480" src="images/slave_system_hardware.png"/>
+<div align=center><img width="640" height="480" src="images/slave_system_hardware.jpg"/>
 Slave System Hardware</div>
 
 ## Dependency
