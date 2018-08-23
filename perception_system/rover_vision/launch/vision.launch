@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+
+  <include file="$(find openni_launch)/launch/openni.launch" />
+  
+  <node pkg="rover_vision" type="test_tennis_ball" name="test_tennis_ball"/>
+
+</launch>
