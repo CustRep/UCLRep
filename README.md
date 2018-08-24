@@ -13,6 +13,9 @@ To know more about the team: https://www.uclrover.com
 
 Demonstration of UCL Rover and the autonomous function:
 
+[YouTobe Video](https://youtu.be/lozCbwh67XY)
+
+
 [![Little red ridning hood](images/ucl_rover.png)](https://youtu.be/lozCbwh67XY "UCL Rover Promotional Video | European Rover Challenge 2018")
 
 Full demonstration of the Autonomous System: [Full Document](https://github.com/CustRep/UCLRep/blob/master/doc/The%20Autonomous%20System%20Demonstration.pdf).
